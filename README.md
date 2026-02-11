@@ -10,6 +10,7 @@ Research proposals and architectural decisions for the robotics control stack.
 |----------|--------|--------|---------|
 | **[ARCHITECTURE_JOURNEY.md](ARCHITECTURE_JOURNEY.md)** | **Historical record** | All | **Story of rejection, insight, and resolution** |
 | **[IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md)** | **Active plan** | 4-5 + Training | **Step-by-step HNN/RL implementation with fix-requests** |
+| **[REPO_STRUCTURE.md](REPO_STRUCTURE.md)** | **Structural spec** | Training | **Where training code and models live (GitHub repos)** |
 | **[LEARNING_ROADMAP.md](LEARNING_ROADMAP.md)** | **Technical reference** | Training | **How to train HNN and RL policies (code examples)** |
 | [free_energy_principle.md](free_energy_principle.md) | Conceptual | 2-5 | FEP theory and active inference overview |
 | [layering_discipline.md](layering_discipline.md) | **Architectural requirement** | All | N → N-1 discipline: observation chain, no layer skipping |
