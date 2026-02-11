@@ -9,7 +9,8 @@ Research proposals and architectural decisions for the robotics control stack.
 | Document | Status | Layers | Summary |
 |----------|--------|--------|---------|
 | **[ARCHITECTURE_JOURNEY.md](ARCHITECTURE_JOURNEY.md)** | **Historical record** | All | **Story of rejection, insight, and resolution** |
-| **[LEARNING_ROADMAP.md](LEARNING_ROADMAP.md)** | **Future work** | Training | **How to train HNN and RL policies (offline)** |
+| **[IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md)** | **Active plan** | 4-5 + Training | **Step-by-step HNN/RL implementation with fix-requests** |
+| **[LEARNING_ROADMAP.md](LEARNING_ROADMAP.md)** | **Technical reference** | Training | **How to train HNN and RL policies (code examples)** |
 | [free_energy_principle.md](free_energy_principle.md) | Conceptual | 2-5 | FEP theory and active inference overview |
 | [layering_discipline.md](layering_discipline.md) | **Architectural requirement** | All | N → N-1 discipline: observation chain, no layer skipping |
 | [naming_conventions.md](naming_conventions.md) | **Architectural standard** | All | Semantic naming: KinematicState, DynamicState, TerrainEstimate |
@@ -44,11 +45,16 @@ See [ARCHITECTURE_JOURNEY.md](ARCHITECTURE_JOURNEY.md) for the full story.
 
 **Next**: Add HNN dynamics learning and RL policy training
 
+See [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md) for:
+- **Step-by-step execution plan** with timeline (12 weeks)
+- Fix-requests to Layer 4 (HNN terrain) and Layer 5 (RL gait)
+- Training infrastructure setup
+- Architectural validation (no Layer 6 needed)
+
 See [LEARNING_ROADMAP.md](LEARNING_ROADMAP.md) for:
-- Where learning happens (offline training, frozen deployment)
-- How to train HNN dynamics models
-- How to train RL/PPO locomotion policies
-- Phased rollout (HNN → RL → Online adaptation)
+- Technical details: HNN training code, RL environment code
+- Offline training architecture
+- Deployment patterns (frozen models)
 
 **Key principle**: Learning happens **outside the layer stack**. Layers receive frozen models and do stateless inference only.
 
