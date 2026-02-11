@@ -8,11 +8,14 @@ Research proposals and architectural decisions for the robotics control stack.
 
 | Document | Status | Layers | Summary |
 |----------|--------|--------|---------|
+| **[ARCHITECTURE_JOURNEY.md](ARCHITECTURE_JOURNEY.md)** | **Historical record** | All | **Story of rejection, insight, and resolution** |
 | [free_energy_principle.md](free_energy_principle.md) | Conceptual | 2-5 | FEP theory and active inference overview |
 | [layering_discipline.md](layering_discipline.md) | **Architectural requirement** | All | N → N-1 discipline: observation chain, no layer skipping |
 | [naming_conventions.md](naming_conventions.md) | **Architectural standard** | All | Semantic naming: KinematicState, DynamicState, TerrainEstimate |
 | [hnn_placement.md](hnn_placement.md) | Design specification | 4 | HNN lives in Layer 4, does prediction + learning |
 | [stateless_vs_learning.md](stateless_vs_learning.md) | **Architecture resolution** | 4-5 | Layer 4: stateful for learning, Layer 5: gait selection only |
+
+**Start here**: Read [ARCHITECTURE_JOURNEY.md](ARCHITECTURE_JOURNEY.md) to understand how we discovered the correct architecture through Layer 5's boundary rejection.
 
 ---
 
