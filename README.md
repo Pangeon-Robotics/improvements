@@ -9,6 +9,7 @@ Research proposals and architectural decisions for the robotics control stack.
 | Document | Status | Layers | Summary |
 |----------|--------|--------|---------|
 | **[ARCHITECTURE_JOURNEY.md](ARCHITECTURE_JOURNEY.md)** | **Historical record** | All | **Story of rejection, insight, and resolution** |
+| **[LEARNING_ROADMAP.md](LEARNING_ROADMAP.md)** | **Future work** | Training | **How to train HNN and RL policies (offline)** |
 | [free_energy_principle.md](free_energy_principle.md) | Conceptual | 2-5 | FEP theory and active inference overview |
 | [layering_discipline.md](layering_discipline.md) | **Architectural requirement** | All | N → N-1 discipline: observation chain, no layer skipping |
 | [naming_conventions.md](naming_conventions.md) | **Architectural standard** | All | Semantic naming: KinematicState, DynamicState, TerrainEstimate |
@@ -34,6 +35,22 @@ Research proposals and architectural decisions for the robotics control stack.
 - Layer 4 → Layer 5: Scalars (roughness, compliance, stability)
 
 See [ARCHITECTURE_JOURNEY.md](ARCHITECTURE_JOURNEY.md) for the full story.
+
+---
+
+## Next Steps: Adding Learning
+
+**Current**: Rule-based terrain estimation + gait selection (no learning)
+
+**Next**: Add HNN dynamics learning and RL policy training
+
+See [LEARNING_ROADMAP.md](LEARNING_ROADMAP.md) for:
+- Where learning happens (offline training, frozen deployment)
+- How to train HNN dynamics models
+- How to train RL/PPO locomotion policies
+- Phased rollout (HNN → RL → Online adaptation)
+
+**Key principle**: Learning happens **outside the layer stack**. Layers receive frozen models and do stateless inference only.
 
 ---
 
