@@ -129,11 +129,23 @@ def get_terrain_estimate() -> TerrainEstimate:
 
 All three issues were **closed** and **recreated** with corrected architecture:
 
-- **Layer 3** [#11](https://github.com/Pangeon-Robotics/layer_3/issues/11): Add KinematicState publisher (unchanged - was correct)
-- **Layer 4** [#18](https://github.com/Pangeon-Robotics/layer_4/issues/18): Add HNN + terrain analysis with **scalar abstraction**
-- **Layer 5** [#2](https://github.com/Pangeon-Robotics/layer_5/issues/2): Terrain-aware gait selection (NO learning, NO arrays)
+- **Layer 3** [#11](https://github.com/Pangeon-Robotics/layer_3/issues/11): ✅ CLOSED - KinematicState publisher implemented
+- **Layer 4** [#18](https://github.com/Pangeon-Robotics/layer_4/issues/18): ✅ CLOSED - Out of scope (HNN learning violates stateless architecture)
+- **Layer 4** [#19](https://github.com/Pangeon-Robotics/layer_4/issues/19): ✅ CLOSED - Simple terrain estimation implemented (replaced #18)
+- **Layer 5** [#2](https://github.com/Pangeon-Robotics/layer_5/issues/2): ✅ CLOSED - Terrain-aware gait selection implemented
 
-**Philosophy issue** [#1](https://github.com/Pangeon-Robotics/philosophy/issues/1): Closed as resolved - no architecture changes needed.
+**Philosophy issue** [#1](https://github.com/Pangeon-Robotics/philosophy/issues/1): ✅ CLOSED - Architecture resolved
+
+### Final Implementation
+
+**What shipped**: Simple sensor-based terrain estimation (#19), not HNN-based (#18)
+
+**Why**: Issue #18's HNN learning violated Layer 4's boundaries:
+- Layer 4 is **instant (stateless)** - HNN learning requires **sequence (stateful)**
+- Layer 4 is **numpy-only** - HNN requires JAX/Flax
+- Learning belongs in Layer 5+, not Layer 4
+
+**Result**: Simpler solution respects boundaries and provides needed functionality.
 
 ---
 

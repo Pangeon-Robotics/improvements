@@ -21,17 +21,19 @@ Research proposals and architectural decisions for the robotics control stack.
 
 ## Implementation Status
 
-**FEP implementation has been specified and approved** with corrected architecture:
+**FEP terrain-aware locomotion is COMPLETE** ✅
 
-- **Layer 3** ([issue #11](https://github.com/Pangeon-Robotics/layer_3/issues/11)): Add KinematicState publisher
-- **Layer 4** ([issue #18](https://github.com/Pangeon-Robotics/layer_4/issues/18)): Add HNN dynamics + terrain analysis
-- **Layer 5** ([issue #2](https://github.com/Pangeon-Robotics/layer_5/issues/2)): Add terrain-aware gait selection
+- **Layer 3** ([#11](https://github.com/Pangeon-Robotics/layer_3/issues/11)): ✅ KinematicState publisher implemented
+- **Layer 4** ([#19](https://github.com/Pangeon-Robotics/layer_4/issues/19)): ✅ Simple terrain estimation implemented
+- **Layer 5** ([#2](https://github.com/Pangeon-Robotics/layer_5/issues/2)): ✅ Terrain-aware gait selection implemented
+
+**Note**: Original Layer 4 issue [#18](https://github.com/Pangeon-Robotics/layer_4/issues/18) (HNN-based) was closed as out of scope - HNN learning violated Layer 4's stateless architecture. The simpler sensor-heuristic approach (#19) respects boundaries and provides needed functionality.
 
 **Key architectural insight**: Each layer only accesses Layer N-1's API. Telemetry flows upward with increasing abstraction:
 - Layer 3 → Layer 4: Arrays (4×3 positions/forces)
 - Layer 4 → Layer 5: Scalars (roughness, compliance, stability)
 
-See [fix-requests/](fix-requests/) for detailed implementation specifications.
+See [ARCHITECTURE_JOURNEY.md](ARCHITECTURE_JOURNEY.md) for the full story.
 
 ---
 
