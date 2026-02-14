@@ -7,7 +7,7 @@
 
 ## Problem
 
-Current plan has training code in local `/Users/graham/code/robotics/training/` which is not in any GitHub repo. Everything must be in the Pangeon-Robotics GitHub organization.
+Current plan has training code in local `../training/` which is not in any GitHub repo. Everything must be in the Pangeon-Robotics GitHub organization.
 
 ---
 
@@ -217,7 +217,7 @@ dvc push
 # On GitHub: Create Pangeon-Robotics/training repo
 
 # Locally
-cd /Users/graham/code/robotics/
+cd ..  # workspace root
 git clone https://github.com/Pangeon-Robotics/training.git
 cd training
 

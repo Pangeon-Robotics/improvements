@@ -258,10 +258,10 @@ def test_observation_publisher_integration(firmware):
 
 ## References
 
-- **Architecture**: `/Users/graham/code/robotics/improvements/layering_discipline.md`
-- **Naming conventions**: `/Users/graham/code/robotics/improvements/naming_conventions.md`
-- **Implementation summary**: `/Users/graham/code/robotics/improvements/implementation_summary.md`
-- **Test script**: `/Users/graham/code/robotics/test_observation_chain.py` (demonstrates the pattern)
+- **Architecture**: `layering_discipline.md`
+- **Naming conventions**: `naming_conventions.md`
+- **Implementation summary**: `implementation_summary.md`
+- **Test script**: `../foreman/test_observation_chain.py` (demonstrates the pattern)
 
 ---
 

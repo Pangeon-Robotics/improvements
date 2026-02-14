@@ -53,7 +53,7 @@
 ## Phase 1: Training Infrastructure (Week 1-2)
 
 **Owner**: ML team (independent, not a layer)
-**Location**: `/Users/graham/code/robotics/training/`
+**Location**: `../training/`
 
 ### Tasks
 
@@ -430,7 +430,7 @@ Run side-by-side tests:
 ## Directory Structure After Implementation
 
 ```
-/Users/graham/code/robotics/
+workspace root (../):
 ├── layers_1_2/          # Firmware + MuJoCo (unchanged)
 ├── layer_3/             # IK (unchanged)
 ├── layer_4/             # Cartesian + HNN terrain (enhanced)
